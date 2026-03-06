@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Paula Araújo da Silva | Portfólio Profissional</title>
+    
+    <!-- Fontes e ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #0f2f5f;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --purple: #8b5cf6;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header com gradiente (estilo dos seus painéis) */
+        .header {
+            background: linear-gradient(135deg, #081a36 0%, #0f2f5f 40%, #2a5298 100%);
+            color: white;
+            padding: 3rem 0 5rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 2rem;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #3b82f6, #8b5cf6);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img i {
+            font-size: 5rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #bfdbfe;
+            margin-bottom: 1rem;
+        }
+
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Cards de contato */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: -3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .contact-info h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info p {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Seções */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-light), transparent);
+        }
+
+        .section-title i {
+            color: var(--primary-light);
+            font-size: 1.8rem;
+        }
+
+        /* Cards de experiência e formação */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            display: inline-block;
+            background: #e6f0ff;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .timeline-content ul {
+            margin-top: 1rem;
+            list-style: none;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text);
+        }
+
+        .timeline-content ul li i {
+            color: var(--success);
+            font-size: 0.9rem;
+        }
+
+        /* Grid de habilidades */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .skill-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .skill-bar-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .skill-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .skill-bar-progress {
+            height: 8px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+        }
+
+        /* Grade curricular */
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grade-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .grade-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .grade-card ul {
+            list-style: none;
+        }
+
+        .grade-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grade-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .grade-card ul li span {
+            font-weight: 600;
+        }
+
+        .badge {
+            background: #e6f0ff;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Portfólio de painéis */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .portfolio-preview {
+            height: 200px;
+            background: linear-gradient(135deg, #1e3a8a, #2a5298);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .portfolio-preview i {
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        .portfolio-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            backdrop-filter: blur(5px);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .portfolio-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .portfolio-stats i {
+            color: var(--primary);
+        }
+
+        /* Análise SWOT */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .swot-card {
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .swot-card.strengths {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .swot-card.weaknesses {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .swot-card.opportunities {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .swot-card.threats {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .swot-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .swot-card ul {
+            list-style: none;
+        }
+
+        .swot-card ul li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .swot-card ul li i {
+            font-size: 0.9rem;
+        }
+
+        /* Tabela salarial */
+        .salary-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .salary-table th {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .salary-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .salary-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .salary-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #081a36, #0f2f5f);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #93c5fd;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header h2 {
+                font-size: 1.1rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .swot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .salary-table {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .grade-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h1>Ana Paula Araújo da Silva</h1>
+                <h2>Tecnologia em Ciência de Dados • Especialista em Dashboards • Analista de BI</h2>
+                <div class="header-tags">
+                    <span class="tag"><i class="fas fa-chart-line"></i> 27 Painéis Desenvolvidos</span>
+                    <span class="tag"><i class="fas fa-graduation-cap"></i> Último Período - Uninter</span>
+                    <span class="tag"><i class="fas fa-code"></i> JavaScript • Python • SQL</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Cards de Contato -->
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-info">
+                    <h3>E-mail</h3>
+                    <p>anap-tata@hotmail.com</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="contact-info">
+                    <h3>Telefone</h3>
+                    <p>(31) 99732-1687</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-info">
+                    <h3>Localização</h3>
+                    <p>Sapucaias, Contagem - MG</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-birthday-cake"></i></div>
+                <div class="contact-info">
+                    <h3>Data de Nascimento</h3>
+                    <p>07/09/1984</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> Objetivo Profissional</h2>
+            <div style="background: linear-gradient(135deg, #e6f0ff, #ffffff); padding: 2rem; border-radius: var(--radius); border-left: 4px solid var(--primary);">
+                <p style="font-size: 1.2rem; line-height: 1.8;">Atuar como <strong>Analista de Dados</strong> ou <strong>Cientista de Dados</strong>, aplicando conhecimentos em análise, visualização e modelagem de dados para apoiar a tomada de decisões estratégicas. Especialista em criação de dashboards interativos e painéis gerenciais para o setor público de saúde.</p>
+            </div>
+        </section>
+
+        <!-- Formação Acadêmica -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                    <div class="timeline-content">
+                        <h3>Tecnologia em Ciência de Dados</h3>
+                        <span class="date">01/2024 – 12/2025 (Cursando - Último Período)</span>
+                        <p><strong>Faculdade Uninter</strong> • Educação Superior</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Lógica de Programação e Algoritmos</li>
+                            <li><i class="fas fa-check-circle"></i> Banco de Dados e NoSQL</li>
+                            <li><i class="fas fa-check-circle"></i> Inteligência Artificial Aplicada</li>
+                            <li><i class="fas fa-check-circle"></i> Machine Learning e Deep Learning</li>
+                            <li><i class="fas fa-check-circle"></i> Visualização de Dados e Storytelling</li>
+                            <li><i class="fas fa-check-circle"></i> Big Data e Computação em Nuvem</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Carga horária total:</strong> 2.145 horas</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="timeline-content">
+                        <h3>Curso de Assistente Administrativo</h3>
+                        <span class="date">06/2024 – 09/2024 • Concluído</span>
+                        <p><strong>Instituto Federal de Educação, Ciência e Tecnologia do RS</strong></p>
+                        <p>200 horas • Aproveitamento: 85,50%</p>
+                        <p style="margin-top: 0.5rem;"><small>Certificado digital nº: 66e1ef12-57a8-48c7-99cb-158f0ade006</small></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="timeline-content">
+                        <h3>Curso Desafio DashEm7</h3>
+                        <span class="date">Concluído em 24/06/2024</span>
+                        <p><strong>Doutores do Excel</strong> • 7 horas</p>
+                        <p>Fórmulas PROCX e PROCV • Tabelas Dinâmicas • Dashboards no Excel • Power Query</p>
+                        <p style="margin-top: 0.5rem;"><span class="badge">Nota 10.0</span> <span class="badge">100% Frequência</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiência Profissional -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-building"></i></div>
+                    <div class="timeline-content">
+                        <h3>Assistente Administrativo</h3>
+                        <span class="date">08/2011 – Atual</span>
+                        <p><strong>Prefeitura Municipal de Contagem</strong> • Contagem/MG</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Suporte em plataformas operacionais para treinamento e manuseio de sistemas</li>
+                            <li><i class="fas fa-check-circle"></i> Análise de banco de dados para formulação de relatórios e higienização da fila de espera no processo de regulação do SUS</li>
+                            <li><i class="fas fa-check-circle"></i> Elaboração de planilhas e consolidados para análise e tomada de decisões</li>
+                            <li><i class="fas fa-check-circle"></i> Criação de consolidados para avaliação de indicadores de desempenho</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Destaque:</strong> Desenvolvimento de 27 painéis interativos para gestão da regulação em saúde</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-headset"></i></div>
+                    <div class="timeline-content">
+                        <h3>Operador de Telemarketing</h3>
+                        <span class="date">10/2009 – 06/2010</span>
+                        <p><strong>AeC</strong> • Belo Horizonte/MG</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Atendimento ao cliente via e-mail, chat e telefone</li>
+                            <li><i class="fas fa-check-circle"></i> Negociação de valores e débitos pendentes</li>
+                            <li><i class="fas fa-check-circle"></i> Análise e tratamento de banco de dados para tomada de decisões</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-industry"></i></div>
+                    <div class="timeline-content">
+                        <h3>Auxiliar de Produção</h3>
+                        <span class="date">12/2006 – 12/2009</span>
+                        <p><strong>Schneider Service Eletro Eletrônico Ltda</strong> • Contagem/MG</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Responsável pelo processo de produção e montagem de peças</li>
+                            <li><i class="fas fa-check-circle"></i> Abastecimento de matérias-primas e otimização de recursos</li>
+                            <li><i class="fas fa-check-circle"></i> Proatividade e independência na realização das tarefas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades e Competências -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-code"></i> Habilidades e Competências</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>Banco de Dados</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>MySQL</span><span>80%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:80%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>NoSQL</span><span>70%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:70%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Banco de Dados (geral)</span><span>85%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Análise de Dados</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Excel (avançado)</span><span>95%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:95%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Power Query</span><span>85%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:85%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Dashboards</span><span>98%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:98%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Programação</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>JavaScript</span><span>85%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:85%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:75%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Java</span><span>70%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:70%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Ferramentas</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Chart.js</span><span>90%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:90%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>Google Sheets</span><span>95%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:95%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label"><span>PowerPoint</span><span>90%</span></div>
+                            <div class="skill-bar-progress"><div class="skill-bar-fill" style="width:90%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grade Curricular (Último Período - Uninter) -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> Grade Curricular - Tecnologia em Ciência de Dados (Uninter)</h2>
+            <p style="margin-bottom: 1.5rem;">Cursando o último período • Carga horária total: 2.145h</p>
+            <div class="grade-grid">
+                <div class="grade-card">
+                    <h3>UTA NÚCLEO INTRODUTÓRIO</h3>
+                    <ul>
+                        <li><span>Lógica de Programação e Algoritmos</span> <span class="badge">65h</span></li>
+                        <li><span>Banco de Dados</span> <span class="badge">65h</span></li>
+                        <li><span>Probabilidade e Estatística</span> <span class="badge">65h</span></li>
+                        <li><span>Pré-Cálculo</span> <span class="badge">65h</span></li>
+                    </ul>
+                </div>
+
+                <div class="grade-card">
+                    <h3>UTA INTELIGÊNCIA ARTIFICIAL</h3>
+                    <ul>
+                        <li><span>Cálculo Diferencial e Integral</span> <span class="badge">65h</span></li>
+                        <li><span>Sistema Gerenciador de BD</span> <span class="badge">65h</span></li>
+                        <li><span>Inteligência Artificial Aplicada</span> <span class="badge">65h</span></li>
+                        <li><span>Linguagem de Programação</span> <span class="badge">65h</span></li>
+                    </ul>
+                </div>
+
+                <div class="grade-card">
+                    <h3>UTA PROGRAMAÇÃO</h3>
+                    <ul>
+                        <li><span>Álgebra Linear</span> <span class="badge">65h</span></li>
+                        <li><span>Estrutura de Dados</span> <span class="badge">65h</span></li>
+                        <li><span>Legislação, Ética e Conformidade</span> <span class="badge">65h</span></li>
+                        <li><span>Engenharia de Software</span> <span class="badge">65h</span></li>
+                        <li><span>Atividades Extensionistas I</span> <span class="badge">110h</span></li>
+                    </ul>
+                </div>
+
+                <div class="grade-card">
+                    <h3>UTA NUVEM E ESTATÍSTICA</h3>
+                    <ul>
+                        <li><span>Ferramentas de Desenvolvimento Web</span> <span class="badge">65h</span></li>
+                        <li><span>Programação Orientada a Objetos</span> <span class="badge">65h</span></li>
+                        <li><span>Modelagem Estatística</span> <span class="badge">65h</span></li>
+                        <li><span>Computação em Nuvem</span> <span class="badge">65h</span></li>
+                    </ul>
+                </div>
+
+                <div class="grade-card">
+                    <h3>UTA DADOS E OPERAÇÃO</h3>
+                    <ul>
+                        <li><span>Computação Paralela</span> <span class="badge">65h</span></li>
+                        <li><span>Segurança em Sistemas de Informação</span> <span class="badge">65h</span></li>
+                        <li><span>Visualização de Dados e Storytelling</span> <span class="badge">65h</span></li>
+                        <li><span>Banco de Dados NoSQL</span> <span class="badge">65h</span></li>
+                    </ul>
+                </div>
+
+                <div class="grade-card">
+                    <h3>UTA GESTÃO DE DADOS</h3>
+                    <ul>
+                        <li><span>Machine Learning</span> <span class="badge">65h</span></li>
+                        <li><span>Matemática Discreta</span> <span class="badge">65h</span></li>
+                        <li><span>Visão Computacional</span> <span class="badge">65h</span></li>
+                        <li><span>Análise Exploratória de Dados</span> <span class="badge">65h</span></li>
+                        <li><span>Atividades Extensionistas II</span> <span class="badge">110h</span></li>
+                    </ul>
+                </div>
+
+                <div class="grade-card">
+                    <h3>UTA APLICAÇÃO ESPECÍFICA</h3>
+                    <ul>
+                        <li><span>Big Data</span> <span class="badge">65h</span></li>
+                        <li><span>Natural Language Processing</span> <span class="badge">65h</span></li>
+                        <li><span>Reinforcement Learning</span> <span class="badge">65h</span></li>
+                        <li><span>Deep Learning</span> <span class="badge">65h</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFÓLIO - SEUS 27 PAINÉIS (DESTAQUE) -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Portfólio de Painéis Desenvolvidos</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">Total de <strong>27 painéis interativos</strong> criados para a Diretoria de Regulação do Acesso, utilizando HTML, CSS, JavaScript, Chart.js, Google Sheets e integrações diversas.</p>
+            
+            <div class="portfolio-grid">
+                <!-- TOP 3 DESTAQUES -->
+                <div class="portfolio-card" style="border-top: 4px solid #f59e0b;">
+                    <div class="portfolio-preview">
+                        <i class="fas fa-trophy" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2; font-size: 5rem;"></i>
+                        <span class="portfolio-badge" style="background: #f59e0b;">🥇 DESTAQUE #1</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Painel OCI</h3>
+                        <p>Dashboard completo com 10+ gráficos, multi-select customizado, gauges interativos e área financeira. Integração com Google Sheets em tempo real.</p>
+                        <div class="portfolio-stats">
+                            <span><i class="fas fa-chart-bar"></i> 12 gráficos</span>
+                            <span><i class="fas fa-filter"></i> Multi-select</span>
+                            <span><i class="fas fa-dollar-sign"></i> Financeiro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" style="border-top: 4px solid #3b82f6;">
+                    <div class="portfolio-preview">
+                        <i class="fas fa-calendar-check" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2; font-size: 5rem;"></i>
+                        <span class="portfolio-badge">🥈 DESTAQUE #2</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Consolidado de Vagas</h3>
+                        <p>Lógica complexa de classificação (vaga livre/bloqueada/agendada). Cards coloridos por status e múltiplas tabelas de resumo.</p>
+                        <div class="portfolio-stats">
+                            <span><i class="fas fa-tag"></i> 3 status</span>
+                            <span><i class="fas fa-table"></i> 8 tabelas</span>
+                            <span><i class="fas fa-clock"></i> Destaque por prazo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" style="border-top: 4px solid #10b981;">
+                    <div class="portfolio-preview">
+                        <i class="fas fa-exclamation-triangle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2; font-size: 5rem;"></i>
+                        <span class="portfolio-badge">🥉 DESTAQUE #3</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Pendências por Distrito</h3>
+                        <p>Integração com 16 planilhas (8 distritos × 2 tipos). Destaque automático para prazos críticos (≤10 dias) e lógica de cancelamento por vencimento.</p>
+                        <div class="portfolio-stats">
+                            <span><i class="fas fa-database"></i> 16 fontes</span>
+                            <span><i class="fas fa-highlighter"></i> Destaque</span>
+                            <span><i class="fas fa-chart-pie"></i> 9 gráficos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; background: #f3f4f6; border-radius: var(--radius); padding: 1.5rem;">
+                <h3 style="margin-bottom: 1rem;">📊 Lista completa dos 27 painéis desenvolvidos:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem;">
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Ouvidoria</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Censo IBGE</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Exames Laboratoriais</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> CCE Iria Diniz</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distritos Sanitários</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Contatos Diversos</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Fluxos de Exames</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Relação de Exames</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Ferramentas Adm (x3)</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Profissionais</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Pendências Geral</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Consolidado Vagas</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Eldorado</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Sede</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Vargem</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Nacional</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Ressaca</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Industrial</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Petrolândia</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> Distrito Riacho</span>
+                    <span><i class="fas fa-check-circle" style="color: #10b981;"></i> + outros complementares</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANÁLISE SWOT (baseada na minha análise profissional) -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-chart-pie"></i> Análise SWOT Profissional</h2>
+            <div class="swot-grid">
+                <div class="swot-card strengths">
+                    <h3><i class="fas fa-plus-circle"></i> FORÇAS</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 27 projetos completos e funcionais</li>
+                        <li><i class="fas fa-check"></i> Domínio de JavaScript puro</li>
+                        <li><i class="fas fa-check"></i> Lógica de negócio complexa</li>
+                        <li><i class="fas fa-check"></i> Integrações com Google Sheets</li>
+                        <li><i class="fas fa-check"></i> Visualização de dados (Chart.js)</li>
+                        <li><i class="fas fa-check"></i> Design responsivo e acessível</li>
+                        <li><i class="fas fa-check"></i> Soluções para problemas reais</li>
+                    </ul>
+                </div>
+
+                <div class="swot-card weaknesses">
+                    <h3><i class="fas fa-minus-circle"></i> FRAQUEZAS</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Pouco uso de frameworks modernos</li>
+                        <li><i class="fas fa-check"></i> Back-end limitado (só Google Sheets)</li>
+                        <li><i class="fas fa-check"></i> Banco de dados relacional</li>
+                        <li><i class="fas fa-check"></i> Autenticação de usuários</li>
+                        <li><i class="fas fa-check"></i> Testes automatizados</li>
+                    </ul>
+                </div>
+
+                <div class="swot-card opportunities">
+                    <h3><i class="fas fa-lightbulb"></i> OPORTUNIDADES</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Especializar-se em dashboards de saúde</li>
+                        <li><i class="fas fa-check"></i> Aprender React/Next.js</li>
+                        <li><i class="fas fa-check"></i> Migrar para produtos SaaS</li>
+                        <li><i class="fas fa-check"></i> Consultoria especializada</li>
+                        <li><i class="fas fa-check"></i> Cursos e treinamentos</li>
+                    </ul>
+                </div>
+
+                <div class="swot-card threats">
+                    <h3><i class="fas fa-exclamation-triangle"></i> AMEAÇAS</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Mercado competitivo</li>
+                        <li><i class="fas fa-check"></i> IA gerando código mais rápido</li>
+                        <li><i class="fas fa-check"></i> Empresas buscando full-stack</li>
+                        <li><i class="fas fa-check"></i> Terceirização</li>
+                        <li><i class="fas fa-check"></i> Obsolescência tecnológica</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABELA SALARIAL (análise de mercado) -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-money-bill-wave"></i> Potencial de Mercado - Análise Salarial</h2>
+            <table class="salary-table">
+                <thead>
+                    <tr>
+                        <th>Cargo</th>
+                        <th>Júnior</th>
+                        <th>Pleno</th>
+                        <th>Sênior</th>
+                        <th>Seu nível atual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desenvolvedor Front-End</strong></td>
+                        <td>R$ 3.500 - 5.000</td>
+                        <td>R$ 6.000 - 9.000</td>
+                        <td>R$ 10.000 - 15.000+</td>
+                        <td class="highlight"><strong>SÊNIOR</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analista de BI</strong></td>
+                        <td>R$ 4.000 - 6.000</td>
+                        <td>R$ 7.000 - 10.000</td>
+                        <td>R$ 12.000 - 18.000</td>
+                        <td class="highlight"><strong>PLENO/SÊNIOR</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Engenheiro de Dados</strong></td>
+                        <td>R$ 5.000 - 8.000</td>
+                        <td>R$ 9.000 - 14.000</td>
+                        <td>R$ 15.000 - 22.000</td>
+                        <td>JÚNIOR</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analista de Sistemas</strong></td>
+                        <td>R$ 4.500 - 7.000</td>
+                        <td>R$ 8.000 - 12.000</td>
+                        <td>R$ 13.000 - 18.000</td>
+                        <td class="highlight"><strong>PLENO</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 1.5rem; background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; padding: 1.5rem; border-radius: var(--radius);">
+                <h3 style="color: white; margin-bottom: 1rem;">💰 Potencial de ganhos estimado:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <span style="opacity: 0.9;">Hoje:</span>
+                        <strong style="font-size: 1.3rem;">R$ 8.000 - 15.000/mês</strong>
+                    </div>
+                    <div>
+                        <span style="opacity: 0.9;">Em 2 anos (React + back-end):</span>
+                        <strong style="font-size: 1.3rem;">R$ 15.000 - 25.000/mês</strong>
+                    </div>
+                    <div>
+                        <span style="opacity: 0.9;">Em 5 anos (especialista/consultor):</span>
+                        <strong style="font-size: 1.3rem;">R$ 30.000 - 50.000/mês</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANO DE DESENVOLVIMENTO -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-road"></i> Plano de Desenvolvimento (Próximos 6 meses)</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Mês 1</h3>
+                    <p>Aprender React (componentes, hooks)</p>
+                    <small style="color: var(--text-light);">Refatorar 1 painel para React</small>
+                </div>
+                <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Mês 2</h3>
+                    <p>Estudar Next.js (SSR, rotas)</p>
+                    <small style="color: var(--text-light);">Criar painel híbrido</small>
+                </div>
+                <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Mês 3</h3>
+                    <p>Back-end básico (Node.js, Express)</p>
+                    <small style="color: var(--text-light);">API própria para dados</small>
+                </div>
+                <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Mês 4</h3>
+                    <p>Banco de dados (MongoDB/PostgreSQL)</p>
+                    <small style="color: var(--text-light);">Persistência real</small>
+                </div>
+                <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Mês 5</h3>
+                    <p>Autenticação (JWT, OAuth)</p>
+                    <small style="color: var(--text-light);">Painéis com login</small>
+                </div>
+                <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Mês 6</h3>
+                    <p>Deploy (Vercel, AWS)</p>
+                    <small style="color: var(--text-light);">Portfólio online</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICADOS -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-certificate"></i> Certificados e Formação Complementar</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                <div style="background: white; border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-weight: 700;">Assistente Administrativo</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">IFRS • 200h • Aproveitamento 85,5%</p>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-weight: 700;">Desafio DashEm7</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Doutores do Excel • 7h • Nota 10.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CITAÇÃO -->
+        <section style="text-align: center; margin: 3rem 0;">
+            <blockquote style="font-size: 1.8rem; font-weight: 300; font-style: italic; color: #1e3a8a;">
+                "Nenhum de nós é tão bom quanto todos nós juntos!"
+            </blockquote>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <i class="fas fa-heartbeat"></i>
+        <p><strong>Ana Paula Araújo da Silva</strong></p>
+        <p>Tecnologia em Ciência de Dados • Especialista em Dashboards</p>
+        <p>27 painéis desenvolvidos para a Diretoria de Regulação do Acesso</p>
+        <p style="margin-top: 1rem;">anap-tata@hotmail.com • (31) 99732-1687</p>
+        <div class="social-links">
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.5;">© 2025 • Portfólio desenvolvido com base na análise profissional de 27 painéis</p>
+    </footer>
+</body>
+</html>
